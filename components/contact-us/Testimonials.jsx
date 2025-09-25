@@ -1,0 +1,58 @@
+import { testimonials3 } from "@/data/testimonials";
+import React from "react";
+import Image from "next/image";
+
+export default function Testimonials() {
+  return (
+    <div
+      id="clients_feedbacks"
+      className="clients-feedbacks lg:rounded-2 lg:mx-2 section panel overflow-hidden"
+    >
+      <div className="section-outer panel py-6 xl:pb-6">
+        <div className="container max-w-lg">
+          <div className="section-inner panel">
+            <div
+              className="panel vstack justify-center items-center gap-4 sm:gap-6 xl:gap-8"
+              data-anime="onview: -100; targets: >*; translateY: [48, 0]; opacity: [0, 1]; easing: spring(1, 80, 10, 0); duration: 450; delay: anime.stagger(100, {start: 200});"
+            >
+              <h2 className="h4 sm:h3 lg:h2 m-0 text-center text-tertiary dark:text-white">
+                Some clients feedbacks
+              </h2>
+              <div
+                className="row child-cols-12 sm:child-cols-6 xl:child-cols-4 justify-center col-match g-2 lg:g-3"
+                data-uc-grid=""
+              >
+                {testimonials3.map((testimonial, index) => (
+                  <div key={index}>
+                    <div className="px-3 sm:px-4 py-4 panel vstack justify-between gap-3 rounded-2 border">
+                      <div className="panel vstack items-start gap-2">
+                        <p className="fs-6 lg:fs-5 text-gray-900 dark:text-white text-opacity-70">
+                          {testimonial.text}
+                        </p>
+                      </div>
+                      <div className="panel hstack gap-2 mt-2 lg:mt-4">
+                        <Image
+                          className="w-40px rounded-circle"
+                          src={testimonial.avatarImgSrc}
+                          width={150}
+                          height={150}
+                          alt={testimonial.avatarImgAlt}
+                        />
+                        <div className="panel vstack items-start gap-0 dark:text-white">
+                          <h6 className="h6 m-0">{testimonial.name}</h6>
+                          <span className="fs-7 opacity-70">
+                            {testimonial.position}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

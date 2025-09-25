@@ -1,0 +1,481 @@
+/* Mobile Table of Contents Styles */
+
+/* Spring slide-up animation with natural feel */
+.mobile-toc-panel {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  will-change: transform;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Enhanced spring animation when opening */
+.mobile-toc-panel.translate-y-0 {
+  animation: springSlideUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* Spring animation when closing */
+.mobile-toc-panel.translate-y-full {
+  animation: springSlideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes springSlideUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0.8;
+  }
+  60% {
+    transform: translateY(-8px);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(4px);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes springSlideDown {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  30% {
+    transform: translateY(-4px);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0.7;
+  }
+}
+
+/* Enhanced panel styling */
+.mobile-toc-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 0, 0, 0.1),
+    transparent
+  );
+}
+
+/* Scrollable content area - global styles */
+.mobile-toc-content {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
+  /* Ensure scrollbar is visible when needed */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+.mobile-toc-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.mobile-toc-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.mobile-toc-content::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+}
+
+.mobile-toc-content::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Backdrop animation with spring feel */
+.mobile-toc-backdrop {
+  transition: opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  backdrop-filter: blur(4px);
+  animation: backdropFadeIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes backdropFadeIn {
+  0% {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  100% {
+    opacity: 0.5;
+    backdrop-filter: blur(4px);
+  }
+}
+
+/* Progress bar animation with spring */
+.reading-progress-bar {
+  transition: width 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Touch-friendly improvements */
+@media (max-width: 768px) {
+  .mobile-toc-panel {
+    /* Ensure proper touch scrolling */
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+
+  /* Scrollable content area */
+  .mobile-toc-content {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    scroll-behavior: smooth;
+  }
+
+  /* Larger touch targets for mobile */
+  .mobile-toc-item {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Improve tap highlighting */
+  .mobile-toc-link {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+    tap-highlight-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Dark mode improvements */
+@media (prefers-color-scheme: dark) {
+  .mobile-toc-backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .mobile-toc-panel,
+  .mobile-toc-backdrop,
+  .reading-progress-bar {
+    transition: none;
+  }
+}
+
+/* Focus styles for accessibility */
+.mobile-toc-link:focus,
+.mobile-toc-button:focus {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+/* Close button styling - polished and centered with spring animations */
+.mobile-toc-close-btn {
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  /* Force visibility with highest priority */
+  background-color: transparent !important;
+  /* border: 1.5px solid #dc2626 !important; */
+  /* color: #dc2626 !important; */
+  z-index: 99999 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+  position: absolute !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+.mobile-toc-close-btn:hover {
+  background-color: rgba(220, 38, 38, 0.08) !important;
+  border-color: #dc2626 !important;
+  color: #dc2626 !important;
+  transform: translateY(-50%) scale(1.12) !important;
+  box-shadow: 0 3px 8px rgba(220, 38, 38, 0.25) !important;
+  animation: buttonBounce 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards !important;
+}
+
+.mobile-toc-close-btn:active {
+  transform: translateY(-50%) scale(0.88) !important;
+  background-color: rgba(220, 38, 38, 0.15) !important;
+  border-color: #b91c1c !important;
+  box-shadow: 0 1px 2px rgba(220, 38, 38, 0.3) !important;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+@keyframes buttonBounce {
+  0% {
+    transform: translateY(-50%) scale(1);
+  }
+  50% {
+    transform: translateY(-50%) scale(1.15);
+  }
+  100% {
+    transform: translateY(-50%) scale(1.12);
+  }
+}
+
+.mobile-toc-close-btn:focus {
+  outline: 2px solid rgba(220, 38, 38, 0.3) !important;
+  outline-offset: 2px !important;
+  background-color: rgba(220, 38, 38, 0.05) !important;
+}
+
+/* Ensure the cross symbol is perfectly centered */
+.mobile-toc-close-btn span {
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Handle bar spring animation */
+.mobile-toc-handle {
+  animation: handleSlide 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s both;
+}
+
+@keyframes handleSlide {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  100% {
+    opacity: 0.6;
+    transform: scaleX(1);
+  }
+}
+
+/* Content items staggered spring animation */
+.mobile-toc-content .post {
+  animation: contentSlideIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+.mobile-toc-content .post:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.mobile-toc-content .post:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.mobile-toc-content .post:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.mobile-toc-content .post:nth-child(4) {
+  animation-delay: 0.25s;
+}
+.mobile-toc-content .post:nth-child(5) {
+  animation-delay: 0.3s;
+}
+.mobile-toc-content .post:nth-child(n + 6) {
+  animation-delay: 0.35s;
+}
+
+@keyframes contentSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Accordion button spring animation */
+.mobile-toc-content .btn {
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+.mobile-toc-content .btn:hover {
+  transform: scale(1.1) !important;
+  animation: buttonPulse 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards !important;
+}
+
+.mobile-toc-content .btn:active {
+  transform: scale(0.9) !important;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+@keyframes buttonPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+/* TOC Links spring hover effects */
+.mobile-toc-content a {
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  transform-origin: left center;
+}
+
+.mobile-toc-content a:hover {
+  transform: translateX(4px) !important;
+}
+
+.mobile-toc-content a:active {
+  transform: translateX(2px) scale(0.98) !important;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Footer button spring animation */
+.mobile-toc-panel .btn-outline-primary {
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+.mobile-toc-panel .btn-outline-primary:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.mobile-toc-panel .btn-outline-primary:active {
+  transform: translateY(0) scale(0.98) !important;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Scroll bounce feedback animations with highlight color #93E85F - faster spring back */
+.mobile-toc-content.bounce-top {
+  animation: scrollBounceTop 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+    forwards;
+}
+
+.mobile-toc-content.bounce-bottom {
+  animation: scrollBounceBottom 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+    forwards;
+}
+
+@keyframes scrollBounceTop {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(12px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes scrollBounceBottom {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-12px);
+  }
+  60% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced overscroll behavior - no full area highlighting */
+.mobile-toc-content {
+  position: relative;
+  overscroll-behavior: none;
+}
+
+/* Bounce visual feedback with highlight color gradient - only edges */
+.mobile-toc-content.bounce-top::before,
+.mobile-toc-content.bounce-bottom::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 25px;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0;
+  animation: bounceGradientFade 0.35s ease-out forwards;
+}
+
+.mobile-toc-content.bounce-top::before {
+  top: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(147, 232, 95, 0.4) 0%,
+    rgba(147, 232, 95, 0.2) 30%,
+    transparent 100%
+  );
+  border-radius: 0 0 8px 8px;
+}
+
+.mobile-toc-content.bounce-bottom::after {
+  bottom: 0;
+  background: linear-gradient(
+    to top,
+    rgba(147, 232, 95, 0.4) 0%,
+    rgba(147, 232, 95, 0.2) 30%,
+    transparent 100%
+  );
+  border-radius: 8px 8px 0 0;
+}
+
+@keyframes bounceGradientFade {
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  40% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scaleY(1);
+  }
+}
+
+/* Subtle bounce effect for items - faster */
+.mobile-toc-content.bounce-top .post,
+.mobile-toc-content.bounce-bottom .post {
+  animation: itemBounce 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes itemBounce {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.01);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Highlight color pulse effect during bounce - faster */
+.mobile-toc-content.bounce-top .text-primary,
+.mobile-toc-content.bounce-bottom .text-primary {
+  animation: highlightPulse 0.35s ease-in-out forwards;
+}
+
+@keyframes highlightPulse {
+  0% {
+    color: var(--bs-primary);
+  }
+  60% {
+    color: #93e85f;
+    text-shadow: 0 0 6px rgba(147, 232, 95, 0.3);
+  }
+  100% {
+    color: var(--bs-primary);
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .mobile-toc-panel {
+    border: 2px solid;
+  }
+
+  .mobile-toc-link:hover,
+  .mobile-toc-link:focus {
+    background-color: highlight;
+    color: highlighttext;
+  }
+}
