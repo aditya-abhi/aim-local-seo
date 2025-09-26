@@ -5,7 +5,7 @@ import React from "react";
 export default function Pricing() {
   return (
     <div
-      id="pricing_tiers"
+      id="pricing"
       className="pricing-tiers section panel overflow-hidden uc-dark"
     >
       <div className="section-outer panel py-6 xl:py-9 bg-tertiary-700 mx-2 rounded-2">

@@ -3180,7 +3180,7 @@ export const mainFeature = [
   },
   {
     order: "order-3 lg:order-0",
-    iconSrc: "/assets/images/icons/39.svg",
+    iconSrc: "/assets/images/icons/54.svg",
     alt: "feature-icon",
     title: "Growth Statistics",
     description:
@@ -3188,7 +3188,7 @@ export const mainFeature = [
   },
   {
     order: "order-2 lg:order-0",
-    iconSrc: "/assets/images/icons/40.svg",
+    iconSrc: "/assets/images/icons/55.svg",
     alt: "feature-icon",
     title: "AI Agent Updated",
     description:
@@ -3270,7 +3270,7 @@ export const mainFeature = [
   },
   {
     order: "order-2 sm:order-1 lg:order-0",
-    iconSrc: "/assets/images/icons/49.svg",
+    iconSrc: "/assets/images/icons/53.svg",
     alt: "feature-icon",
     title: "Protection",
     description:

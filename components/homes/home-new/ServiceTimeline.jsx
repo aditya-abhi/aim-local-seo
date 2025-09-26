@@ -414,7 +414,7 @@ export default function ServiceTimeline() {
               <Link
                 href={`https://calendly.com/team-getaimonitor/ai-monitor-local-seo-demo`}
                 target="_blank"
-                className="btn btn-xl btn-tertiary text-white hover:bg-primary hover:text-tertiary dark:border-secondary dark:bg-primary dark:text-tertiary dark:hover:bg-secondary dark:hover:text-tertiary dark:hover:border-primary border-2 px-2 w-auto shadow-lg"
+                className="btn btn-xl btn-tertiary text-white hover:bg-gray-600 hover:text-white dark:border-secondary dark:bg-tertiary dark:text-white dark:hover:bg-tertiary dark:hover:text-primary border-2 px-2 w-auto shadow-lg"
               >
                 {/* <i className="icon-narrow unicon-chat-launch fw-bold" /> */}
                 <span>Start your Journey</span>

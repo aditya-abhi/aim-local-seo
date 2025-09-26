@@ -1238,7 +1238,7 @@ export const featuresHeader = [
         ilink: "/features",
       },
       {
-        iconSrc: "/assets/images/icons/5.svg",
+        iconSrc: "/assets/images/icons/51.svg",
         title: "Growth Statistics",
         description: "Track performance metrics that drive smart decisions",
         ilink: "/features",
@@ -1252,7 +1252,7 @@ export const featuresHeader = [
     icon: "unicon-gamification",
     items: [
       {
-        iconSrc: "/assets/images/icons/6.svg",
+        iconSrc: "/assets/images/icons/52.svg",
         title: "AI Agent",
         description:
           " Get personalized, actionable strategies tailored to your business",
@@ -1315,7 +1315,7 @@ export const featuresHeader = [
         ilink: "/features",
       },
       {
-        iconSrc: "/assets/images/icons/15.svg",
+        iconSrc: "/assets/images/icons/50.svg",
         title: "Protection",
         description: "Keep your Business Profile information safe",
         ilink: "/features",
