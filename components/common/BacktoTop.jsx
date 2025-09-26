@@ -3,7 +3,7 @@
 import { useContextElement } from "@/context/Context";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import MobileTableOfContent from "@/components/blogs/components/MobileTableOfContent";
+// import MobileTableOfContent from "@/components/blogs/components/MobileTableOfContent";
 
 export default function BacktoTop() {
   const { isDark, handleToggle } = useContextElement();
@@ -54,19 +54,21 @@ export default function BacktoTop() {
         {isBlogPage && isVisible && (
           <button
             className={`btn btn-sm w-40px h-40px rounded-circle mb-1 border-0 transition-all duration-200 ${
-              isTOCOpen 
-                ? "shadow-lg" 
+              isTOCOpen
+                ? "shadow-lg"
                 : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 shadow-md hover:shadow-lg"
             }`}
             style={{
               backgroundColor: isTOCOpen ? "#025864" : undefined,
-              color: isTOCOpen ? "#ffffff" : undefined
+              color: isTOCOpen ? "#ffffff" : undefined,
             }}
             onClick={toggleTOC}
-            title={isTOCOpen ? "Close Table of Contents" : "Open Table of Contents"}
+            title={
+              isTOCOpen ? "Close Table of Contents" : "Open Table of Contents"
+            }
           >
             {isTOCOpen ? (
-              <span 
+              <span
                 style={{
                   color: "#ffffff",
                   fontSize: "20px",
@@ -77,17 +79,17 @@ export default function BacktoTop() {
                   justifyContent: "center",
                   width: "100%",
                   height: "100%",
-                  zIndex: 1000
+                  zIndex: 1000,
                 }}
               >
                 ×
               </span>
             ) : (
-              <i 
+              <i
                 className="icon-2 unicon-list"
                 style={{
                   fontSize: "16px",
-                  zIndex: 1000
+                  zIndex: 1000,
                 }}
               />
             )}
@@ -113,13 +115,13 @@ export default function BacktoTop() {
       </div>
 
       {/* Mobile TOC - Bottom-anchored expandable */}
-      {isBlogPage && (
+      {/* {isBlogPage && (
         <MobileTableOfContent
           isOpen={isTOCOpen}
           onToggle={toggleTOC}
           onClose={() => setIsTOCOpen(false)}
         />
-      )}
+      )} */}
     </>
   );
 }

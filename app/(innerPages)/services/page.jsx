@@ -1,6 +1,6 @@
 import Header from "@/components/headers/Header7";
 import Footer from "@/components/footers/Footer7";
-import Hero from "@/components/services/Hero";
+// import Hero from "@/components/services/Hero";
 import Hero2 from "@/components/services/Hero2";
 import Features from "@/components/services/Features";
 import Services from "@/components/services/Services";
@@ -11,7 +11,7 @@ import Cta from "@/components/services/Cta";
 // import Target from "@/components/features/Target";
 import WhySection from "@/components/services/WhySection";
 import ChooseUs from "@/components/services/ChooseUs";
-import ServiceTimeline from "@/components/servicePages/saasSeo/ServiceTimeline";
+// import ServiceTimeline from "@/components/servicePages/saasSeo/ServiceTimeline";
 import CaseStudies from "@/components/services/CaseStudies";
 
 export const metadata = {

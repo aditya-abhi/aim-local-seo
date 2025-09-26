@@ -16,10 +16,10 @@ import { usePathname } from "next/navigation";
 import MobileMenu from "@/components/headers/component/MobileMenu";
 import BacktoTop from "@/components/common/BacktoTop";
 import { ParallaxProvider } from "react-scroll-parallax";
-import ContactModal from "@/components/modals/ContactModal";
-import NewsletterModal from "@/components/modals/NewsletterModal";
-import SearchModal from "@/components/modals/SearchModal";
-import GeoEnrollModal from "@/components/modals/GeoEnrollModal";
+// import ContactModal from "@/components/modals/ContactModal";
+// import NewsletterModal from "@/components/modals/NewsletterModal";
+// import SearchModal from "@/components/modals/SearchModal";
+// import GeoEnrollModal from "@/components/modals/GeoEnrollModal";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export default function RootLayout({ children }) {
@@ -113,10 +113,10 @@ export default function RootLayout({ children }) {
           <ParallaxProvider>{children}</ParallaxProvider>
           <SpeedInsights />
           <MobileMenu />
-          <ContactModal />
-          <NewsletterModal />
-          <SearchModal />
-          <GeoEnrollModal />
+          {/* <ContactModal /> */}
+          {/* <NewsletterModal /> */}
+          {/* <SearchModal /> */}
+          {/* <GeoEnrollModal /> */}
           <Cart />
           <BacktoTop />
         </Context>

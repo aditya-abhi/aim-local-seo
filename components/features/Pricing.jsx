@@ -53,17 +53,15 @@ export default function Pricing() {
                             </span>
                             <div className="vstack gap-1 justify-center text-center mt-3">
                               <Link
-                                href={`/sign-up`}
-                                className={`btn btn-md sm:btn-sm lg:btn-md ${
-                                  tier.title === "Enterprise"
-                                    ? "btn-dark"
-                                    : "btn-tertiary"
-                                } text-white`}
+                                href={`${tier.link}`}
+                                className="btn btn-md sm:btn-sm lg:btn-md btn-tertiary text-white"
+                                target="_blank"
+                                rel="noopener noreferrer"
                               >
                                 {tier.linkText}
                               </Link>
                               <span className="fs-7 opacity-70 min-h-24px text-gray-500">
-                                {tier.linkSubtext}
+                                {/* {tier.linkSubtext} */}
                               </span>
                             </div>
                           </div>
